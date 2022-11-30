@@ -45,10 +45,8 @@ fn main() {
     }
 
     let input_file_name = format!("inputs/input_{:02}.txt", day);
-    let input = match fs::read_to_string(&input_file_name) {
-        Ok(content) => content,
-        Err(error) => panic!("Problem opening the {}: {:?}", &input_file_name, error),
-    };
-    
+    let input= fs::read_to_string(&input_file_name)
+        .expect(&format!("Could not open the file {}", &input_file_name));
+
     get_day_run(day)(&input);
 }
