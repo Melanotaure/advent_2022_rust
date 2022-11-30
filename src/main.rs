@@ -45,7 +45,10 @@ fn main() {
     }
 
     let input_file_name = format!("inputs/input_{:02}.txt", day);
-    let input_file_content = fs::read_to_string(input_file_name).unwrap();
-
-    get_day_run(day)(&String::from(&input_file_content));
+    if let Result::Ok(input_file_content) = fs::read_to_string(&input_file_name) {
+        get_day_run(day)(&String::from(&input_file_content));
+    }
+    else {
+        println!("File {} not found", &input_file_name);
+    }
 }
