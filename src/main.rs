@@ -34,6 +34,7 @@ fn get_day_run(day: u32) -> fn(&String) -> () {
         22u32 => day_22::run,
         23u32 => day_23::run,
         24u32 => day_24::run,
+        25u32 => day_25::run,
     };
     *DAYRUNS.get(&day).unwrap()
 }
