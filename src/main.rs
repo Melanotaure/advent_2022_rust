@@ -3,6 +3,7 @@ use days::*;
 use std::fs;
 use std::env;
 
+use std::time::Instant;
 use phf_macros::phf_map;
 use chrono::{Utc, Datelike};
 
@@ -48,5 +49,8 @@ fn main() {
     let input= fs::read_to_string(&input_file_name)
         .expect(&format!("Could not open the file {}", &input_file_name));
 
+    let now = Instant::now();
     get_day_run(day)(&input);
+    let duration = now.elapsed();
+    dbg!(duration);
 }
