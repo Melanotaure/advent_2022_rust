@@ -40,10 +40,6 @@ fn get_day_run(day: u32) -> fn(&String) -> () {
 }
 
 fn main() {
-    for d in 2..26 {
-        std::fs::write(format!("inputs/input_{:02}.txt", d), "");
-    }
-
     let mut day = Utc::now().day();
     if env::args().len() == 2 {
         let args: Vec<String> = env::args().collect();
