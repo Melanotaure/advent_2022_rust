@@ -1,0 +1,6 @@
+# Advent of Code 2022 in RUST
+
+An attempt to find the solutions of this year with RUST...
+I'll give it a try after the event, likely...
+
+Don't hesitate to go to this fun site: https://adventofcode.com/
